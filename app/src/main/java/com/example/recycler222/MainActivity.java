@@ -10,9 +10,14 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
 import android.widget.Toast;
 
+import com.google.zxing.Result;
+
 import java.util.ArrayList;
+
+import me.dm7.barcodescanner.zxing.ZXingScannerView;
 
 public class MainActivity extends AppCompatActivity
 {
@@ -36,19 +41,16 @@ public class MainActivity extends AppCompatActivity
     public ArrayList<String> ArrayOfURLBack = new ArrayList<>();
     public ArrayList<String> ArrayOfExtra = new ArrayList<>();
 
-
-
-
-
     final DBHelper dbHelper = new DBHelper(this);
 
+
+    private ZXingScannerView zXingScannerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.new_layout);
-
 
 
         mIDs = (ArrayList<String>) getIntent().getSerializableExtra("listID");
@@ -60,15 +62,13 @@ public class MainActivity extends AppCompatActivity
         initImageBitmaps();
     }
 
+
+
     private void initImageBitmaps()
     {
         Context context = getApplicationContext();
 
-
         int duration = Toast.LENGTH_SHORT;
-
-
-
 
         initRecyclerView();
     }

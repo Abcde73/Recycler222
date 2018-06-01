@@ -78,7 +78,6 @@ public class Update extends AppCompatActivity
                 SQLiteDatabase database = dbHelper.getWritableDatabase();
 
 
-
                 String changeName = "UPDATE " + DBHelper.DATABASE_NAME+
                     " SET "+DBHelper.KEY_NAME+" = '"+editTextNameU.getText().toString()+"'" +
                     " WHERE _id = "+hereId+";";

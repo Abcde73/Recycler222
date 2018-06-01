@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+
 import java.util.ArrayList;
 
 public class Import extends AppCompatActivity
@@ -35,9 +36,12 @@ public class Import extends AppCompatActivity
 
     Button btnWrite;
     Button btnRead;
+    Button btnReadFromCamera;
 
     String description = "dffgfdgfddgfdg";
     final DBHelper dbHelper = new DBHelper(this);
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -47,12 +51,14 @@ public class Import extends AppCompatActivity
 
         btnWrite = (Button) findViewById(R.id.button);
         btnRead = (Button) findViewById(R.id.btnReadFromDB);
+        btnReadFromCamera = (Button) findViewById(R.id.btnReadFromCamera);
 
         editTextName = (EditText) findViewById(R.id.edittext_name);
         editTextNumber = (EditText) findViewById(R.id.editTextNumNum);
         edtxtUrl = (EditText) findViewById(R.id.edittext_url);
         edtxtUrl2 = (EditText) findViewById(R.id.edittext_back_url);
         editTextExtra = (EditText) findViewById(R.id.edittext_extra);
+
 
 
         btnWrite.setOnClickListener(new View.OnClickListener()
@@ -142,7 +148,6 @@ public class Import extends AppCompatActivity
 
         Intent intent=new Intent(Import.this, MainActivity.class);
 
-
         intent.putExtra("listID", ArrayOfId);
         intent.putExtra("listURL", ArrayOfURL);
         intent.putExtra("listName", ArrayOfName);
@@ -153,3 +158,5 @@ public class Import extends AppCompatActivity
         startActivity(intent);
     }
 }
+
+
